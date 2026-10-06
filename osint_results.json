@@ -1,0 +1,123 @@
+{
+  "target": "Karam Hemarusha",
+  "breach_data": [],
+  "email_findings": {
+    "hemarusha19@gmail.com": {
+      "status": "HTTP 401",
+      "format_valid": true
+    },
+    "hemarushaharinath.k@gmail.com": {
+      "status": "HTTP 401",
+      "format_valid": true
+    }
+  },
+  "phone_findings": {
+    "WhatsApp": {
+      "url": "https://wa.me/+919010183934",
+      "status_code": 200,
+      "found": true
+    },
+    "Truecaller": {
+      "url": "https://www.truecaller.com/search/in/9010183934",
+      "status_code": 200,
+      "found": true
+    }
+  },
+  "username_availability": {
+    "Instagram": {
+      "url": "https://instagram.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Reddit": {
+      "url": "https://reddit.com/user/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "LinkedIn": {
+      "url": "https://linkedin.com/in/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "TikTok": {
+      "url": "https://tiktok.com/@miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Pinterest": {
+      "url": "https://pinterest.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    }
+  },
+  "social_media_presence": {
+    "Instagram Profiles": [
+      "https://support.google.com/websearch"
+    ],
+    "Twitter Profiles": [
+      "https://support.google.com/websearch"
+    ],
+    "LinkedIn Profiles": [
+      "https://support.google.com/websearch"
+    ],
+    "Facebook Profiles": [
+      "https://support.google.com/websearch"
+    ],
+    "Reddit Profiles": [
+      "https://support.google.com/websearch"
+    ],
+    "OnlyFans": [
+      "https://support.google.com/websearch"
+    ],
+    "Pinterest": [
+      "https://support.google.com/websearch"
+    ]
+  },
+  "domain_search": [],
+  "discord_servers": [],
+  "pan_findings": {},
+  "address_search": [
+    {
+      "query": "\"507121\" Karam Hemarusha",
+      "source": "PIN Code Search",
+      "results": [
+        "https://support.google.com/websearch"
+      ]
+    },
+    {
+      "query": "\"1-81\" Karam Hemarusha",
+      "source": "Address Search",
+      "results": [
+        "https://support.google.com/websearch"
+      ]
+    },
+    {
+      "query": "\"Karam Hemarusha\" \"East Godavari\"",
+      "source": "District Search",
+      "results": [
+        "https://support.google.com/websearch"
+      ]
+    }
+  ],
+  "content_platform_status": {
+    "OnlyFinder": {
+      "url": "https://onlyfinder.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Gumroad": {
+      "url": "https://gumroad.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    }
+  },
+  "summary": {
+    "target": "Karam Hemarusha",
+    "total_breaches": 0,
+    "social_profiles_found": 5,
+    "discord_servers": 0,
+    "emails_checked": 2,
+    "phones_checked": 2,
+    "scan_completed": "2026-10-06 17:11:49"
+  }
+}

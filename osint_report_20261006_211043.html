@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSINT Report — Karam Hemarusha</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a0f; color: #e0e0e0; line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 30px; border-radius: 16px; margin-bottom: 30px; text-align: center; border: 1px solid #1e3a5f; }
+  header h1 { font-size: 2.2em; background: linear-gradient(90deg, #00d4ff, #7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  header .subtitle { color: #8892b0; margin-top: 8px; font-size: 0.95em; }
+  header .target-name { font-size: 1.4em; color: #ccd6f6; margin-top: 5px; }
+
+  .profile-card { background: linear-gradient(135deg, #1e1e3a, #2a1a3e); border-radius: 16px; padding: 25px; margin-bottom: 20px; border: 1px solid #333366; }
+  .profile-header { display: flex; align-items: center; gap: 20px; }
+  .profile-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #00d4ff, #7b2ff7); display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: bold; color: white; flex-shrink: 0; }
+  .profile-info h2 { font-size: 1.6em; color: #fff; }
+  .profile-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .tag { background: #1a3a5a; color: #88ccff; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; }
+  .profile-detail { color: #8892b0; font-size: 0.9em; margin-top: 4px; }
+  .profile-thumb { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; }
+
+  .card { background: #13131f; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #1e1e30; }
+  .card h3 { color: #ccd6f6; font-size: 1.15em; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+  .card-icon { font-size: 1.2em; }
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .info-item { background: #1a1a2e; padding: 10px 14px; border-radius: 8px; }
+  .info-item label { display: block; font-size: 0.75em; color: #8892b0; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .info-item span { color: #e0e0e0; word-break: break-all; }
+  .hl { color: #64ffda; font-weight: 600; font-family: 'Courier New', monospace; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat-card { background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid #1e3a5f; border-radius: 12px; padding: 18px; text-align: center; }
+  .stat-num { font-size: 2em; font-weight: bold; color: #64ffda; }
+  .stat-label { font-size: 0.75em; color: #8892b0; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #1a1a2e; color: #8892b0; padding: 10px 12px; text-align: left; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #2a2a3e; }
+  td { padding: 10px 12px; border-bottom: 1px solid #1a1a2e; }
+  tr:hover td { background: #1a1a2e; }
+
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 0.78em; font-weight: 600; }
+  .badge-ok { background: #0a2a1a; color: #64ffda; }
+  .badge-no { background: #2a0a0a; color: #ff6b6b; }
+
+  .section-title { color: #8892b0; font-size: 0.85em; margin: 10px 0 6px; }
+  .result-list { margin-bottom: 10px; }
+  .result-item { background: #1a1a2e; padding: 8px 12px; border-radius: 6px; margin-bottom: 4px; }
+  .result-item a { color: #64ffda; text-decoration: none; font-size: 0.9em; }
+  .result-item a:hover { text-decoration: underline; color: #00d4ff; }
+  .result-url { color: #555; font-size: 0.75em; word-break: break-all; }
+  .result-snippet { color: #8892b0; font-size: 0.8em; margin-top: 2px; }
+
+  footer { text-align: center; color: #555; padding: 30px 0; font-size: 0.85em; }
+
+  @media (max-width: 600px) {
+    .profile-header { flex-direction: column; text-align: center; }
+    .info-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🔍 OSINT Intelligence Report</h1>
+    <div class="target-name">Karam Hemarusha</div>
+    <div class="subtitle">Scan completed: 2026-10-06 21:09:28 · Master OSINT Agent v3.0</div>
+  </header>
+
+  
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="profile-avatar">K</div>
+        <div class="profile-info">
+          <h2>Karam Hemarusha</h2>
+          <div class="profile-tags">
+            <span class="tag">Female</span>
+            <span class="tag">26 years</span>
+            <span class="tag">ST (Koya)</span>
+            <span class="tag">19-11-1999</span>
+          </div>
+          <p class="profile-detail">Height: 164cm · Weight: 78kg</p>
+          <p class="profile-detail">Marks: Mole on left cheek, Mole on right eyebrow</p>
+        </div>
+      </div>
+    </div>
+    
+  
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">15</div><div class="stat-label">Social Profiles</div></div>
+      <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Content Platforms</div></div>
+      <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Breaches Found</div></div>
+      <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Dark Web Leaks</div></div>
+      <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Web Results</div></div>
+      <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Telegram Leads</div></div>
+    </div>
+    
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:20px;">
+    
+    <div class="card">
+      <h3><span class="card-icon">📞</span> Contact Information</h3>
+      <div class="info-grid">
+        <div class="info-item"><label>Phone 1</label><span class="hl">+919010183934</span></div>
+        <div class="info-item"><label>Phone 2</label><span class="hl">+919490686935</span></div>
+        <div class="info-item"><label>Email 1</label><span class="hl">hemarusha19@gmail.com</span></div>
+        <div class="info-item"><label>Email 2</label><span class="hl">hemarushaharinath.k@gmail.com</span></div>
+        <div class="info-item"><label>Instagram</label><span class="hl">@miss.h_a_pp_y</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="card">
+      <h3><span class="card-icon">📍</span> Addresses</h3>
+      <div class="info-grid">
+        <div class="info-item"><label>Aadhaar Address</label><span>1-81, Jaggavaram Village, Chuchirevulagudem Post, Kunavaram Mandal, East Godavari District, AP - 507121</span></div>
+        <div class="info-item"><label>Insurance Note</label><span>PIN 533350, Alluri Sitarama Raju District</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="card">
+      <h3><span class="card-icon">🆔</span> Identity Documents</h3>
+      <div class="info-grid">
+        <div class="info-item"><label>Aadhaar</label><span class="hl">5038 **** **** 8975</span></div>
+        <div class="info-item"><label>PAN</label><span class="hl">KJCPK0810B</span></div>
+        <div class="info-item"><label>Caste Cert</label><span class="hl">CGC011504710040</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="card">
+      <h3><span class="card-icon">👨‍👩‍👧‍👧</span> Family</h3>
+      <div class="info-grid"><div class="info-item"><label>Father</label><span>Karam Harinath Babu</span></div><div class="info-item"><label>Mother</label><span>Karam Parvathi</span></div><div class="info-item"><label>Sister</label><span>Karam Shanvitha Rani</span></div></div>
+    </div>
+    
+    
+    <div class="card">
+      <h3><span class="card-icon">🛡️</span> Insurance</h3>
+      <div class="info-grid">
+        <div class="info-item"><label>Provider</label><span>HDFC ERGO</span></div>
+        <div class="info-item"><label>Policy No</label><span class="hl">28000000607624</span></div>
+        <div class="info-item"><label>Plan</label><span>my:Optima Secure</span></div>
+        <div class="info-item"><label>Nominee</label><span>Karam Shanvitha Rani</span></div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="card"><h3><span class="card-icon">📧</span> Email Check Results</h3><div class="info-grid"><div class="info-item"><label>hemarusha19@gmail.com</label><span class="badge badge-no">⚠️ HTTP 401</span></div><div class="info-item"><label>hemarushaharinath.k@gmail.com</label><span class="badge badge-no">⚠️ HTTP 401</span></div></div></div>
+  <div class="card"><h3><span class="card-icon">📱</span> Phone Analysis</h3><div class="info-grid"><div class="info-item"><label>+91 9010183934</label><span>WhatsApp: ✅ · Truecaller: ✅</span></div><div class="info-item"><label>+91 9490686935</label><span>WhatsApp: ✅ · Truecaller: ✅</span></div></div></div>
+  
+  
+  <div class="card"><h3><span class="card-icon">🔍</span> Username Availability (15 profiles found)</h3><div class="table-wrap"><table><thead><tr><th>Platform</th><th>Status</th><th>URL</th></tr></thead><tbody><tr><td><strong>Discord</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://discord.com/users/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Fansly</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://fansly.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Gumroad</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://gumroad.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Instagram</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://instagram.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Ko-fi</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://ko-fi.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>OnlyFinder</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://onlyfinder.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Pinterest</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://pinterest.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Reddit</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://reddit.com/user/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Spotify</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://open.spotify.com/user/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Steam</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://steamcommunity.com/id/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Substack</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://substack.com/@miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Telegram</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://t.me/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>TikTok</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://tiktok.com/@miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Tinder</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://tinder.com/@miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Twitch</strong></td><td><span class="badge badge-ok">✅ Found</span></td><td><a href="https://twitch.tv/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr></tbody></table></div></div>
+  <div class="card"><h3><span class="card-icon">🔞</span> Content Platforms</h3><div class="table-wrap"><table><thead><tr><th>Platform</th><th>Status</th><th>URL</th></tr></thead><tbody><tr><td><strong>OnlyFinder</strong></td><td><span class="badge badge-ok">✅ Active</span></td><td><a href="https://onlyfinder.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Fansly</strong></td><td><span class="badge badge-ok">✅ Active</span></td><td><a href="https://fansly.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Gumroad</strong></td><td><span class="badge badge-ok">✅ Active</span></td><td><a href="https://gumroad.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Ko-fi</strong></td><td><span class="badge badge-ok">✅ Active</span></td><td><a href="https://ko-fi.com/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>Substack</strong></td><td><span class="badge badge-ok">✅ Active</span></td><td><a href="https://substack.com/@miss.h_a_pp_y" target="_blank">Visit →</a></td></tr><tr><td><strong>ManyVids</strong></td><td><span class="badge badge-ok">✅ Active</span></td><td><a href="https://manyvids.com/Profile/miss.h_a_pp_y" target="_blank">Visit →</a></td></tr></tbody></table></div></div>
+  
+  <div class="card"><h3><span class="card-icon">✈️</span> Telegram Channel Candidates</h3><div class="info-grid"><div class="info-item"><label>@karam_hemarusha_leaks</label><span class="badge badge-no">🔍 Manual check</span></div><div class="info-item"><label>@karamhemarusha_nudes</label><span class="badge badge-no">🔍 Manual check</span></div><div class="info-item"><label>@indian_nudes_leaks</label><span class="badge badge-no">🔍 Manual check</span></div><div class="info-item"><label>@desi_leak_central</label><span class="badge badge-no">🔍 Manual check</span></div><div class="info-item"><label>@south_indian_leaks</label><span class="badge badge-no">🔍 Manual check</span></div><div class="info-item"><label>@telugu_leaks</label><span class="badge badge-no">🔍 Manual check</span></div></div></div>
+  
+  <div class="card"><h3><span class="card-icon">🌍</span> Domain Search</h3><div class="info-grid"><div class="info-item"><label>karamhemarusha.com</label><span class="badge badge-no">Inactive</span> <small></small></div></div></div>
+  <div class="card"><h3><span class="card-icon">📸</span> Social Media Profile Data</h3><div class="info-grid"><div class="info-item"><label>Instagram</label><span>Profile found</span></div><div class="info-item"><label>TikTok</label><span>Profile found</span></div></div></div>
+  
+  
+  
+  
+
+  <footer>
+    <p>Master OSINT Agent · Generated 2026-10-06 21:10:43</p>
+    <p style="margin-top:4px;font-size:0.75em;color:#333;">Data collected from public sources. Verify before acting.</p>
+  </footer>
+</div>
+</body>
+</html>

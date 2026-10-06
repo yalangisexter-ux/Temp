@@ -1,0 +1,339 @@
+{
+  "target": "Karam Hemarusha",
+  "scan_time": "2026-10-06 21:34:35",
+  "profile": {
+    "name": "Karam Hemarusha",
+    "dob": "19-11-1999",
+    "age": 26,
+    "gender": "Female",
+    "community": "ST (Koya)",
+    "height_cm": 164,
+    "weight_kg": 78,
+    "distinctive_marks": [
+      "Mole on left cheek",
+      "Mole on right eyebrow"
+    ]
+  },
+  "family": {
+    "father": "Karam Harinath Babu",
+    "mother": "Karam Parvathi",
+    "sister": "Karam Shanvitha Rani"
+  },
+  "contact": {
+    "primary_phone": "+919010183934",
+    "secondary_phone": "+919490686935",
+    "email_primary": "hemarusha19@gmail.com",
+    "email_secondary": "hemarushaharinath.k@gmail.com",
+    "instagram_handle": "@miss.h_a_pp_y"
+  },
+  "addresses": {
+    "aadhaar_address": "1-81, Jaggavaram Village, Chuchirevulagudem Post, Kunavaram Mandal, East Godavari District, AP - 507121",
+    "insurance_address_note": "PIN 533350, Alluri Sitarama Raju District"
+  },
+  "ids": {
+    "aadhaar_partial": "5038 **** **** 8975",
+    "pan": "KJCPK0810B",
+    "caste_cert_no": "CGC011504710040"
+  },
+  "insurance": {
+    "provider": "HDFC ERGO",
+    "policy_no": "28000000607624",
+    "plan": "my:Optima Secure",
+    "nominee": "Karam Shanvitha Rani"
+  },
+  "web_search_results": [],
+  "breach_data": [],
+  "email_findings": {
+    "hemarusha19@gmail.com": {
+      "status": "HTTP 401"
+    },
+    "hemarushaharinath.k@gmail.com": {
+      "status": "HTTP 401"
+    }
+  },
+  "phone_findings": {
+    "9010183934": {
+      "WhatsApp": {
+        "exists": true,
+        "url": "https://wa.me/+919010183934"
+      },
+      "Truecaller": {
+        "exists": true,
+        "url": "https://www.truecaller.com/search/in/9010183934"
+      }
+    },
+    "9490686935": {
+      "WhatsApp": {
+        "exists": true,
+        "url": "https://wa.me/+919490686935"
+      },
+      "Truecaller": {
+        "exists": true,
+        "url": "https://www.truecaller.com/search/in/9490686935"
+      }
+    }
+  },
+  "username_availability": {
+    "Instagram": {
+      "url": "https://instagram.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "Twitter/X": {
+      "url": "https://twitter.com/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "Facebook": {
+      "url": "https://facebook.com/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 400
+    },
+    "LinkedIn": {
+      "url": "https://linkedin.com/in/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 999
+    },
+    "Reddit": {
+      "url": "https://reddit.com/user/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": "Reddit"
+    },
+    "TikTok": {
+      "url": "https://tiktok.com/@miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "Pinterest": {
+      "url": "https://pinterest.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "YouTube": {
+      "url": "https://youtube.com/@miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "GitHub": {
+      "url": "https://github.com/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "Twitch": {
+      "url": "https://twitch.tv/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": "Twitch"
+    },
+    "Spotify": {
+      "url": "https://open.spotify.com/user/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": "Spotify – Web Player"
+    },
+    "Snapchat": {
+      "url": "https://snapchat.com/add/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "Telegram": {
+      "url": "https://t.me/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": "Telegram Messenger"
+    },
+    "Discord": {
+      "url": "https://discord.com/users/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "Steam": {
+      "url": "https://steamcommunity.com/id/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": "Steam Community :: Error"
+    },
+    "Roblox": {
+      "url": "https://roblox.com/users/miss.h_a_pp_y/profile",
+      "exists": false,
+      "status_code": 404
+    },
+    "Tinder": {
+      "url": "https://tinder.com/@miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": "Tinder | Dating, Make Friends & Meet New People"
+    },
+    "Fansly": {
+      "url": "https://fansly.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "Gumroad": {
+      "url": "https://gumroad.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "Ko-fi": {
+      "url": "https://ko-fi.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "Substack": {
+      "url": "https://substack.com/@miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": ""
+    },
+    "Medium": {
+      "url": "https://medium.com/@miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 403
+    },
+    "DeviantArt": {
+      "url": "https://deviantart.com/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 403
+    },
+    "Behance": {
+      "url": "https://behance.net/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 403
+    },
+    "Dribbble": {
+      "url": "https://dribbble.com/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "About.me": {
+      "url": "https://about.me/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "Linktree": {
+      "url": "https://linktr.ee/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "OnlyFinder": {
+      "url": "https://onlyfinder.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200,
+      "title": "🥇 50 Best Miss.h_a_pp_y OnlyFans To Follow in 2026 - OnlyFinder"
+    }
+  },
+  "social_media_content": {
+    "Instagram": {
+      "url": "https://www.instagram.com/miss.h_a_pp_y/",
+      "status": "found",
+      "description": "",
+      "profile_image": ""
+    },
+    "TikTok": {
+      "url": "https://www.tiktok.com/@miss.h_a_pp_y",
+      "status": "found",
+      "description": "",
+      "profile_image": ""
+    }
+  },
+  "google_dorking": {},
+  "domain_search": [
+    {
+      "domain": "karamhemarusha.com",
+      "status": "unreachable"
+    }
+  ],
+  "discord_servers": [],
+  "pan_findings": {
+    "pan": "KJCPK0810B",
+    "results": []
+  },
+  "address_search": [],
+  "family_search": {},
+  "content_platform_status": {
+    "OnlyFinder": {
+      "url": "https://onlyfinder.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Fansly": {
+      "url": "https://fansly.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Gumroad": {
+      "url": "https://gumroad.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Ko-fi": {
+      "url": "https://ko-fi.com/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Substack": {
+      "url": "https://substack.com/@miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    },
+    "Fanvue": {
+      "url": "https://fanvue.com/miss.h_a_pp_y",
+      "exists": false,
+      "status_code": 404
+    },
+    "ManyVids": {
+      "url": "https://manyvids.com/Profile/miss.h_a_pp_y",
+      "exists": true,
+      "status_code": 200
+    }
+  },
+  "financial_checks": {},
+  "dark_web_leaks": [],
+  "telegram_candidates": [
+    {
+      "channel": "@karam_hemarusha_leaks",
+      "status": "manual check required"
+    },
+    {
+      "channel": "@karamhemarusha_nudes",
+      "status": "manual check required"
+    },
+    {
+      "channel": "@indian_nudes_leaks",
+      "status": "manual check required"
+    },
+    {
+      "channel": "@desi_leak_central",
+      "status": "manual check required"
+    },
+    {
+      "channel": "@south_indian_leaks",
+      "status": "manual check required"
+    },
+    {
+      "channel": "@telugu_leaks",
+      "status": "manual check required"
+    }
+  ],
+  "summary": {
+    "target": "Karam Hemarusha",
+    "scan_time": "2026-10-06 21:34:35",
+    "web_search_results": 0,
+    "total_breaches": 0,
+    "social_profiles_found": 15,
+    "content_platforms_found": 6,
+    "dark_web_leaks": 0,
+    "telegram_candidates": 6,
+    "emails_checked": 2,
+    "phones_checked": 2,
+    "usernames_checked": 6
+  }
+}
